@@ -7,11 +7,13 @@ Instructions:
 
 Current updates:
 - Data has been prepped and will update whenever main.py is executed
+- GUI has been setup
 
 Future:
 Version 1.0
 - Data analysis as described
-- Better GUI functionality
+- Further analysis on the economy and healthcare of a country in relation to the proportion of deaths to 
+- Widgets to add
 Version 2.0
 - Django Web App
 
