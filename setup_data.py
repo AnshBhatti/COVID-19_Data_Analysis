@@ -25,9 +25,9 @@ def setup_data(data):
         del data["Combined_Key"]
     except KeyError:
         s="l"
-    del data["Confirmed"]
-    del data["Deaths"]
-    del data["Recovered"]
+    #del data["Confirmed"]
+    #del data["Deaths"]
+    #del data["Recovered"]
     try:
         data=data.groupby("Country_Region").sum()
     except KeyError:

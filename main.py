@@ -25,12 +25,16 @@ def setup_GUI():
 if os.path.exists("data.xlsx"):
     f=open("STATUS.txt",'r')
     r=f.readline().split()
+    f.close()
     d=str(datetime.today()).split()[0]
     if d[5:8]+d[8:]+'-'+d[:4]!=r[0]:
-        print("Please wait for updates")
+        print("Please wait for updates: Last update took place on "+d[5:8]+d[8:]+'-'+d[:4])
         update()
 else:
-    print("Please wait for updates")
+    print("Please wait for data to be acquired...")
     generate()
 setup_GUI()
-data=pd.read_excel("data.xlsx")
+active=pd.read_excel("data.xlsx",sheet_name="Active")
+confirmed=pd.read_excel("data.xlsx",sheet_name="Confirmed")
+recovered=pd.read_excel("data.xlsx",sheet_name="Recovered")
+deaths=pd.read_excel("data.xlsx",sheet_name="Deaths")
