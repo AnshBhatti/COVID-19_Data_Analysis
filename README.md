@@ -14,6 +14,7 @@ Version 1.0
 - Data analysis as described
 - Further analysis on the economy and healthcare of a country in relation to the proportion of deaths to 
 - Widgets to add
+
 Version 2.0
 - Django Web App
 
