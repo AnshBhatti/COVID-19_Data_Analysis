@@ -18,5 +18,12 @@ Version 1.0
 Version 2.0
 - Django Web App
 
+Packages used:
+- Openpyxl
+- Pandas
+- Matplotlib
+
+Language: Python 3.7.0
+
 Credits:
 - Special thanks to Johns Hopkins Whiting School of Engineering for their COVID-19 dataset on Github
