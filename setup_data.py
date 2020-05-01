@@ -1,6 +1,6 @@
 def setup_data(data):
     #print(data.head())
-    data["Active"]=data["Confirmed"]-data["Recovered"]
+    data["Active"]=data["Confirmed"]-data["Recovered"]-data["Deaths"]
     try:
         del data["Province/State"]
     except KeyError:
