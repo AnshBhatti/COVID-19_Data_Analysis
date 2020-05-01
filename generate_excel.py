@@ -75,40 +75,42 @@ def update():
     f=open("STATUS.txt",'r')
     inp=f.readline().split()
     f.close()
-    pdate=date(int(inp[0][6:]),int(inp[0][:2]),int(inp[0][3:5]))
-    end_date=str(datetime.today()).split()[0]
-    tdate1=date(int(end_date[:4]),int(end_date[5:7]),int(end_date[8:]))
-    delta=timedelta(days=1)
-    i=int(inp[1])
-    while pdate<=tdate1:
-        dat=pdate.strftime("%m-%d-%Y")
-        try:
-            data=setup_data(pd.read_csv(BASE_URL+dat+".csv"))
-        except urllib.error.HTTPError:
-            break
-        wb['A'+str(i)]=dat
-        for a in range(len(countries)):
-            x=list(data.index)
-            y=countries[a]
-            if y in x:
-                wb[l[a]+str(i)]=int(data.loc[y]["Active"])
-            elif y not in x:
-                f=False
-                for b in range(len(x)):
-                    if y in x[b]:
-                        f=True
-                        y=x[b]
-                        break
-                if f:
-                    wb[l[a]+str(i)]=int(data.loc[y]["Active"])
+    names=["Active","Recovered","Confirmed","Deaths"]
+    for t in range(4):
+        pdate=date(int(inp[0][6:]),int(inp[0][:2]),int(inp[0][3:5]))
+        end_date=str(datetime.today()).split()[0]
+        tdate1=date(int(end_date[:4]),int(end_date[5:7]),int(end_date[8:]))
+        delta=timedelta(days=1)
+        i=int(inp[1])
+        while pdate<=tdate1:
+            dat=pdate.strftime("%m-%d-%Y")
+            try:
+                data=setup_data(pd.read_csv(BASE_URL+dat+".csv"))
+            except urllib.error.HTTPError:
+                break
+            wb['A'+str(i)]=dat
+            for a in range(len(countries)):
+                x=list(data.index)
+                y=countries[a]
+                if y in x:
+                    wb[l[a]+str(i)]=int(data.loc[y][names[t]])
+                elif y not in x:
+                    f=False
+                    for b in range(len(x)):
+                        if y in x[b]:
+                            f=True
+                            y=x[b]
+                            break
+                    if f:
+                        wb[l[a]+str(i)]=int(data.loc[y][names[t]])
+                    else:
+                        wb[l[a]+str(i)]=0
                 else:
-                    wb[l[a]+str(i)]=0
-            else:
-                wb[l[a]+'2']=0
-        pdate+=delta
-        print(dat)
-        i+=1
-    g=open("STATUS.txt",'w')
-    g.write(dat+' '+str(i))
-    g.close()
-    book.save(filename="data.xlsx")
+                    wb[l[a]+'2']=0
+            pdate+=delta
+            print(dat)
+            i+=1
+        g=open("STATUS.txt",'w')
+        g.write(dat+' '+str(i))
+        g.close()
+        book.save(filename="data.xlsx")
