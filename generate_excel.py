@@ -71,12 +71,13 @@ def update():
     l=utils.cell.get_column_interval(2,240)
     print("Updating...")
     book=load_workbook("data.xlsx")
-    wb=book.get_sheet_by_name("COVID-19 Information By Country")
     f=open("STATUS.txt",'r')
     inp=f.readline().split()
     f.close()
     names=["Active","Recovered","Confirmed","Deaths"]
     for t in range(4):
+        print(names[t])
+        wb=book.get_sheet_by_name(names[t])
         pdate=date(int(inp[0][6:]),int(inp[0][:2]),int(inp[0][3:5]))
         end_date=str(datetime.today()).split()[0]
         tdate1=date(int(end_date[:4]),int(end_date[5:7]),int(end_date[8:]))
