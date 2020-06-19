@@ -7,16 +7,14 @@ what exactly is happening. This data analysis serves purposes of:
 - Providing up-to-date statistics regarding COVID-19 throughout the world
 - Generating visualizations of the statistics of [at most 5 at a given 
 time] countries
-- Finding the relationship between the time it took for a country's 
-government to respond and the absolute maximum that a country reached (to analyze how different governments reacted and
-determine how they should in the future)
-   - Dividing the former by the latter will provide the "Response Factor"
-   - The higher the Response Factor, the better the country is performing
-   - The Response Factor will always be between 0 and 1
+- Providing the "Response Factor," which is essentially the number of
+days it took for a country to reach its maximum number of active cases.
+As of now, the Response Factor will not be accurate as many countries are
+yet to reach their maximum.
 - Finding the relationship between the Global Health Security Index and 
 the Response Factor in a scatter plot
-- Finding the relationship between the GDP drop (in %) of a country and
-its Response Factor
+- Finding the relationship between the Confirmed-Active cases ratio and
+the Response Factor in a scatter plot
 
 CREDITS:
 - Special thanks to Johns Hopkins Whiting School of Engineering for their
