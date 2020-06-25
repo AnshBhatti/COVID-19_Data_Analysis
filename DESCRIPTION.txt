@@ -13,9 +13,11 @@ As of now, the Response Factor will not be accurate as many countries are
 yet to reach their maximum.
 - Finding the relationship between the Global Health Security Index and 
 the Response Factor in a scatter plot
-- Finding the relationship between the Confirmed-Active cases ratio and
+- Finding the relationship between Life Expectancy and
 the Response Factor in a scatter plot
 
 CREDITS:
-- Special thanks to Johns Hopkins Whiting School of Engineering for their
+- Johns Hopkins Whiting School of Engineering for their
 COVID-19 dataset on Github
+- Worldometers for their life expectancy chart
+- GHS Index for their Global Health Security Index chart
