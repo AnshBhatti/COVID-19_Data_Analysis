@@ -6,24 +6,20 @@ Instructions:
 3) In the GUI that opens, click on 1 of the 4 boxes for its respective functionality
 
 Current updates:
-- Data has been prepped and will update whenever main.py is executed
-- GUI has been setup
-
-Future:
-Version 1.0
-- Data analysis as described
-- Further analysis on the economy and healthcare of a country in relation to the proportion of deaths to 
-- Widgets to add
-
-Version 2.0
-- Django Web App
+- Project is done! I open myself to feedback and revisions. 
 
 Packages used:
 - Openpyxl
 - Pandas
 - Matplotlib
+- Numpy
+- Lxml
+- Tkinter
+- Datetime and time
 
-Language: Python 3.7.0
+Language: Python 3
 
 Credits:
-- Special thanks to Johns Hopkins Whiting School of Engineering for their COVID-19 dataset on Github
+- Johns Hopkins Whiting School of Engineering for their COVID-19 dataset on Github
+- Worldometers for their life expectancy chart
+- GHS Index for their Global Health Security Index chart
