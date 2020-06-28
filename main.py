@@ -65,7 +65,7 @@ def written(let):
     rec=recovered.tail(1)
     y=190
     for a in range(len(countries)):
-        if countries[a][0].upper()==let or let=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or let=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==let or let=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or let=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             canvas.create_text(70,y,text=countries[a],font="Times 12",anchor=W,width=130)
             canvas.create_text(200,y,text=int(con[countries[a]]),font="Times 12",anchor=W)
             canvas.create_text(300,y,text=int(rec[countries[a]]),font="Times 12",anchor=W)
@@ -123,35 +123,35 @@ def graph():
 def p11(val):
     cont=[]
     for a in range(len(countries)):
-        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             cont.append(countries[a])
     o1=OptionMenu(tk,v,*cont,command=add)
     canvas.create_window(140,240,window=o1)
 def p22(val):
     cont=[]
     for a in range(len(countries)):
-        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             cont.append(countries[a])
     o2=OptionMenu(tk,v1,*cont,command=add)
     canvas.create_window(320,240,window=o2)
 def p33(val):
     cont=[]
     for a in range(len(countries)):
-        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             cont.append(countries[a])
     o3=OptionMenu(tk,v2,*cont,command=add)
     canvas.create_window(500,240,window=o3)
 def p44(val):
     cont=[]
     for a in range(len(countries)):
-        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             cont.append(countries[a])
     o4=OptionMenu(tk,v3,*cont,command=add)
     canvas.create_window(680,240,window=o4)
 def p55(val):
     cont=[]
     for a in range(len(countries)):
-        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<='o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>'o':
+        if countries[a][0].upper()==val or val=="S1" and countries[a][0].upper()=='S' and countries[a][1].lower()<'o' or val=="S2" and countries[a][0].upper()=='S' and countries[a][1].lower()>='o':
             cont.append(countries[a])
     o5=OptionMenu(tk,v4,*cont,command=add)
     canvas.create_window(860,240,window=o5)
@@ -272,6 +272,7 @@ def rf_ghs(event):
             y_data.append(country_rf["rf"][each])
     x_data=np.array(x_data)
     y_data=np.array(y_data)
+    plt.cla()
     plt.xlabel("Global Health Security Index")
     plt.ylabel("Response Factor")
     plt.title("Response Factor v. GHS Index")
@@ -299,6 +300,7 @@ def acr_rf(event):
     x_data=np.array(x_data)
     y_data=np.array(y_data)
     m,b=np.polyfit(x_data,y_data,1)
+    plt.cla()
     plt.ylabel("Response Factor")
     plt.xlabel("Life Expectancy (in years)")
     plt.title("Response Factor v. Life Expectancy")
