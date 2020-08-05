@@ -1,5 +1,6 @@
 # COVID-19_Data_Analysis
-Get updates, analyze countries' data, analyze their response relative to their recovery time, analyze Global Security Health Index, and analyze economic effects
+Get updates, analyze countries' data, analyze their response relative to their recovery time, analyze Global Security Health Index and life expectancy.
+
 Instructions:
 1) Execute main.py (do not manipulate any of the files)
 2) Wait for data updates (if needed)
